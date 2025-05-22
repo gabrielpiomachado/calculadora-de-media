@@ -34,13 +34,13 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.MemberView
     public void onBindViewHolder(@NonNull MemberViewHolder holder, int position) {
         Member member = memberList.get(position);
         holder.txtName.setText(member.getName());
-        holder.txtRole.setText(member.getRole());
+        holder.txtRa.setText(member.getRa());
         holder.imgMember.setImageResource(member.getImage());
 
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, MemberDetailActivity.class);
             intent.putExtra("name", member.getName());
-            intent.putExtra("role", member.getRole());
+            intent.putExtra("ra", member.getRa());
             intent.putExtra("image", member.getImage());
             context.startActivity(intent);
         });
@@ -52,13 +52,13 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.MemberView
     }
 
     public static class MemberViewHolder extends RecyclerView.ViewHolder {
-        TextView txtName, txtRole;
+        TextView txtName, txtRa;
         ImageView imgMember;
 
         public MemberViewHolder(@NonNull View itemView) {
             super(itemView);
             txtName = itemView.findViewById(R.id.txtName);
-            txtRole = itemView.findViewById(R.id.txtRole);
+            txtRa = itemView.findViewById(R.id.txtRa);
             imgMember = itemView.findViewById(R.id.imgMember);
         }
     }

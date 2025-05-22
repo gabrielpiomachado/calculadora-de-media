@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MemberDetailActivity extends AppCompatActivity {
 
-    private TextView txtName, txtRole;
+    private TextView txtName, txtRa;
     private ImageView imgMember;
 
     @Override
@@ -16,15 +16,15 @@ public class MemberDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_member_detail);
 
         txtName = findViewById(R.id.txtDetailName);
-        txtRole = findViewById(R.id.txtDetailRole);
+        txtRa = findViewById(R.id.txtDetailRa);
         imgMember = findViewById(R.id.imgDetailMember);
 
         String name = getIntent().getStringExtra("name");
-        String role = getIntent().getStringExtra("role");
+        String ra = getIntent().getStringExtra("ra");
         int image = getIntent().getIntExtra("image", 0);
 
         txtName.setText(name);
-        txtRole.setText(role);
+        txtRa.setText(ra);
         imgMember.setImageResource(image);
     }
 }
